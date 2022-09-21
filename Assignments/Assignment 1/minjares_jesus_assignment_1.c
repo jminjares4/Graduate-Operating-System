@@ -38,9 +38,9 @@ int main(){
         fprintf(stderr,"Error forking a process\n");//error message 
         return -1; //exit 
     }
-    else if( child[3] == 0) //if the last child pid is 0, then execute program
+    if( child[3] == 0) //if the last child pid is 0, then execute program
         execlp(commands[3], commands[3], arguments[3], NULL);
-    else 
-        printf("Good bye!\n"); //dont wait for the last process to end
+    
+    printf("Good bye!\n"); //dont wait for the last process to end
     return 0;
 }
